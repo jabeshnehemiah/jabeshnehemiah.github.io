@@ -1,15 +1,3 @@
-import { animateFooter } from "./footer.js"
-
-const clockContainer = document.getElementsByClassName("clock")[0]
-for (let i = 0; i < 60; i++) {
-  const div = document.createElement("div")
-  div.classList.add("block")
-  div.setAttribute("data-num",i)
-  clockContainer.append(div)
-}
-
-animateFooter()
-
 const numbers = [
   [1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1], // 0
   [1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1], // 1
@@ -82,4 +70,4 @@ const animateClock = () => {
   window.requestAnimationFrame(animateClock)
 }
 
-animateClock()
+export { animateClock }

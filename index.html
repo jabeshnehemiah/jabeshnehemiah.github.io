@@ -10,9 +10,7 @@
 
 <body>
   <div class="container">
-    <div class="date-container">
-      <h1 id="time"></h1>
-      <h2 id="date"></h2>
+    <div class="clock">
     </div>
     <form action="https://www.google.com/search">
       <i class="search-icon fa-brands fa-google fa-lg"></i>
@@ -50,11 +48,23 @@
           <p><a href="https://mail.google.com">Mail</a></p>
       </div>
     </div>
-    <div class="footer">
-      <p>“I never dreamed about success. I worked for it.” —Estée Lauder</p>
-    </div>
   </div>
+  <div class="footer">
+    <span id="text1"></span>
+    <span id="text2"></span>
+  </div>
+
+  <svg id="filters">
+    <defs>
+      <filter id="threshold">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 255 -140" />
+      </filter>
+    </defs>
+  </svg>
 </body>
-<script src="index.js"></script>
+<script src="index.js" type="module"></script>
 
 </html>

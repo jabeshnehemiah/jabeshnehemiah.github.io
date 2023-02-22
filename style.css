@@ -46,14 +46,49 @@ h1 {
   text-align: center;
 }
 
-.date-container{
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.clock{
+	position: relative;
+	display: flex;
+	flex-flow: column wrap;
+	width: 280px;
+	height: 100px;
 }
 
-.date-container h2{
-  font-weight: normal;
-  margin-top: 0;
+.block{
+	width: calc(100% / 12);
+	height: 20%;
+	color: #c0ccd4;
+	transition: .4s;
+}
+
+.block:not(:nth-child(n + 16)):nth-child(n + 11),
+.block:not(:nth-child(n + 46)):nth-child(n + 41){
+  margin-right: 10px;
+}
+.block:not(:nth-child(n + 31)):nth-child(n + 26){
+  margin-right: 20px
+}
+
+.block::before{
+  content: attr(data-num);
+  position: relative;
+  display: block;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  line-height: 20px;
+  text-align: center;
+}
+
+.block:nth-child(-n + 10):before{
+  content: '0' attr(data-num)
+}
+.block.active:before{
+  color: whitesmoke;
+  font-weight: 500;
+}
+.block.second:before{
+  color: #ffce00;
 }
 
 form {
@@ -103,14 +138,32 @@ a {
   color: #c0ccd4;
   text-decoration: none;
   margin: 1rem;
+  transition: 0.5s
 }
 
 a:hover {
-  color: #ffce00;
+  color: #fff;
+  text-shadow: 0 0 0.5rem #ffce00,
+  0 0 1rem #ffce00,
+  0 0 2rem #ffce00,
+  0 0 4rem #ffce00;
 }
 
 .footer {
-  font-style: italic;
-  margin-top: 4rem;
-  padding-bottom: 2rem;
+  filter: url(#threshold) blur(0.6px);
+}
+
+#text1,
+#text2 {
+  position: absolute;
+  user-select: none;
+  font-family: 'Oswald', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  width: 100%;
+}
+
+#filters{
+  height: 0;
 }
