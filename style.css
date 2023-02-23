@@ -59,6 +59,7 @@ h1 {
   color: #ffce00;
   margin-top: 1rem;
   margin-bottom: 3rem;
+  user-select: none;
 }
 
 .block{
