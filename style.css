@@ -52,8 +52,13 @@ h1 {
 	width: 21rem;
 	height: 7rem;
   padding-top: 2rem;
-  padding-bottom: 2rem;
   margin: auto;
+}
+
+.date{
+  color: #ffce00;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
 }
 
 .block{
@@ -155,6 +160,7 @@ a:hover {
 
 .footer {
   filter: url(#threshold) blur(0.6px);
+  margin-top: 2rem;
 }
 
 #text1,

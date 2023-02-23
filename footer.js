@@ -4,15 +4,12 @@ const elts = {
 };
 
 const texts = [
-  "welcome",
-  "back",
-  "jabesh",
-  "nehemiah",
-  "wijaya"
+  "Welcome to your browser",
+  "What do you want to do today?",
 ];
 
 const morphTime = 2;
-const cooldownTime = 0.25;
+const cooldownTime = 2;
 
 let textIndex = texts.length - 1;
 let time = new Date();
@@ -22,7 +19,7 @@ let cooldown = cooldownTime;
 elts.text1.textContent = texts[textIndex % texts.length];
 elts.text2.textContent = texts[(textIndex + 1) % texts.length];
 
-function doMorph() {
+const doMorph = () => {
   morph -= cooldown;
   cooldown = 0;
 
@@ -36,7 +33,7 @@ function doMorph() {
   setMorph(fraction);
 }
 
-function setMorph(fraction) {
+const setMorph = fraction => {
   elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
   elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 
@@ -48,7 +45,7 @@ function setMorph(fraction) {
   elts.text2.textContent = texts[(textIndex + 1) % texts.length];
 }
 
-function doCooldown() {
+const doCooldown = () => {
   morph = 0;
 
   elts.text2.style.filter = "";

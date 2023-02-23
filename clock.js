@@ -18,7 +18,7 @@ for (let i = 0; i < 4; i++) {
   blocks.push(digits.slice(i * 15, i * 15 + 15));
 }
 
-const setNum = (block, num) => {
+export const setNum = (block, num) => {
   let n = numbers[num];
   for (let i = 0; i < block.length; i++) {
     block[i].classList[n[i] === 1 ? 'add' : 'remove']('active');
