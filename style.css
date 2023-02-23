@@ -47,36 +47,39 @@ h1 {
 }
 
 .clock{
-	position: relative;
 	display: flex;
 	flex-flow: column wrap;
-	width: 280px;
-	height: 100px;
+	width: 21rem;
+	height: 7rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin: auto;
 }
 
 .block{
-	width: calc(100% / 12);
+  font-weight: 500;
+	width: calc(88% / 12);
 	height: 20%;
-	color: #c0ccd4;
+	color: #254876;
 	transition: .4s;
 }
 
 .block:not(:nth-child(n + 16)):nth-child(n + 11),
 .block:not(:nth-child(n + 46)):nth-child(n + 41){
-  margin-right: 10px;
+  margin-right: 2%;
 }
 .block:not(:nth-child(n + 31)):nth-child(n + 26){
-  margin-right: 20px
+  margin-right: 8%;
 }
 
 .block::before{
   content: attr(data-num);
   position: relative;
   display: block;
-  font-size: 16px;
+  font-size: 1rem;
   width: 100%;
   height: 100%;
-  line-height: 20px;
+  line-height: 1.5rem;
   text-align: center;
 }
 
@@ -84,7 +87,7 @@ h1 {
   content: '0' attr(data-num)
 }
 .block.active:before{
-  color: whitesmoke;
+  color: #c0ccd4;
   font-weight: 500;
 }
 .block.second:before{
@@ -143,6 +146,7 @@ a {
 
 a:hover {
   color: #fff;
+  font-weight: 900;
   text-shadow: 0 0 0.5rem #ffce00,
   0 0 1rem #ffce00,
   0 0 2rem #ffce00,
